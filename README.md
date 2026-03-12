@@ -82,5 +82,11 @@ This system is designed as a **supportive tool only** and **not as a medical dia
 * Multi-language support
 
 ---
+AUTHOR-
+ARJUN SINGH RANA
+ARPIT PATEL
+ARPIT KUMAR PRAJAPATI
+ARUN
+
 
  
