@@ -1,0 +1,275 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI-Based Exam Anxiety Detector</title>
+
+<style>
+
+body{
+font-family: Arial, Helvetica, sans-serif;
+margin:0;
+background:#f4f7fb;
+color:#333;
+}
+
+header{
+background:#1f3c88;
+color:white;
+padding:25px;
+text-align:center;
+}
+
+.container{
+width:80%;
+margin:auto;
+padding:30px 0;
+}
+
+.section{
+margin-bottom:40px;
+}
+
+.card{
+background:white;
+padding:20px;
+border-radius:10px;
+box-shadow:0 3px 10px rgba(0,0,0,0.1);
+margin-top:15px;
+}
+
+.levels{
+display:flex;
+gap:20px;
+margin-top:20px;
+flex-wrap:wrap;
+}
+
+.level{
+flex:1;
+padding:20px;
+border-radius:8px;
+text-align:center;
+color:white;
+min-width:200px;
+}
+
+.low{
+background:#2ecc71;
+}
+
+.moderate{
+background:#f39c12;
+}
+
+.high{
+background:#e74c3c;
+}
+
+textarea{
+width:100%;
+padding:12px;
+border-radius:5px;
+border:1px solid #ccc;
+margin-top:10px;
+font-size:14px;
+}
+
+button{
+padding:12px 25px;
+background:#1f3c88;
+color:white;
+border:none;
+border-radius:5px;
+cursor:pointer;
+margin-top:15px;
+font-size:16px;
+}
+
+button:hover{
+background:#162d66;
+}
+
+.result{
+margin-top:20px;
+font-size:20px;
+font-weight:bold;
+}
+
+footer{
+background:#1f3c88;
+color:white;
+text-align:center;
+padding:15px;
+margin-top:40px;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>AI-Based Exam Anxiety Detector</h1>
+<p>Detecting Student Exam Stress using Artificial Intelligence</p>
+</header>
+
+<div class="container">
+
+<!-- Project Overview -->
+<div class="section">
+<h2>Project Overview</h2>
+
+<div class="card">
+<p>
+The AI-Based Exam Anxiety Detector is a mental wellness support system designed to identify
+exam-related anxiety from student-written text such as reflections, feedback, or thoughts before exams.
+</p>
+
+<p>
+The system analyzes emotional patterns in text and classifies anxiety into three levels:
+<strong>Low Anxiety, Moderate Anxiety, and High Anxiety.</strong>
+</p>
+
+<p>
+The goal of this system is to help students, teachers, and educational institutions detect stress
+early and provide appropriate emotional or academic support.
+</p>
+</div>
+
+</div>
+
+<!-- Anxiety Levels -->
+<div class="section">
+
+<h2>Anxiety Levels</h2>
+
+<div class="levels">
+
+<div class="level low">
+<h3>Low Anxiety 😊</h3>
+<p>Student feels confident and relaxed about the exam.</p>
+</div>
+
+<div class="level moderate">
+<h3>Moderate Anxiety 😐</h3>
+<p>Student feels slightly nervous but still manageable.</p>
+</div>
+
+<div class="level high">
+<h3>High Anxiety 😟</h3>
+<p>Student feels stressed, worried, or overwhelmed.</p>
+</div>
+
+</div>
+
+</div>
+
+<!-- Demo -->
+<div class="section">
+
+<h2>Try Demo</h2>
+
+<div class="card">
+
+<label>Write your thoughts about your upcoming exam:</label>
+
+<textarea id="userText" rows="5" placeholder="Example: I am very nervous about tomorrow's exam"></textarea>
+
+<br>
+
+<button onclick="analyzeText()">Analyze Anxiety</button>
+
+<div id="result" class="result"></div>
+
+</div>
+
+</div>
+
+<!-- Use Case -->
+<div class="section">
+
+<h2>Use Case Scenarios</h2>
+
+<div class="card">
+
+<h3>1️⃣ Pre-Exam Anxiety Assessment</h3>
+
+<p>
+Students can write their feelings before an exam. The system analyzes the text and provides
+instant feedback about their anxiety level along with calming suggestions.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>2️⃣ Mental Wellness Monitoring</h3>
+
+<p>
+Educational institutions can analyze overall anxiety trends among students before major exams
+and arrange counselling sessions, workshops, or academic support programs.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<footer>
+<p>AI-Based Exam Anxiety Detector | Educational Demo Project</p>
+</footer>
+
+<script>
+
+function analyzeText(){
+
+let text = document.getElementById("userText").value.toLowerCase();
+let result = document.getElementById("result");
+
+if(text.trim() === ""){
+result.innerHTML = "⚠️ Please enter your thoughts first.";
+result.style.color = "black";
+return;
+}
+
+if(
+text.includes("scared") ||
+text.includes("panic") ||
+text.includes("can't sleep") ||
+text.includes("very nervous") ||
+text.includes("extremely stressed")
+){
+
+result.innerHTML = "High Anxiety 😟 <br>Tip: Take deep breaths, rest well, and talk to a mentor or counselor.";
+result.style.color = "red";
+
+}
+
+else if(
+text.includes("worried") ||
+text.includes("stress") ||
+text.includes("nervous") ||
+text.includes("pressure")
+){
+
+result.innerHTML = "Moderate Anxiety 😐 <br>Tip: Try relaxation techniques and structured revision.";
+result.style.color = "orange";
+
+}
+
+else{
+
+result.innerHTML = "Low Anxiety 😊 <br>Tip: Stay confident and maintain a positive mindset.";
+result.style.color = "green";
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
